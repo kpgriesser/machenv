@@ -1,7 +1,7 @@
 # Environment
-export SST_CORE_HOME=/script/kgriesser/local/sst-core
-export SST_CORE_ROOT=/script/kgriesser/work/sst-core
-export SST_EXT_TESTS_HOME=/script/kgriesser/work/sst-ext-tests
+export SST_CORE_HOME=/scratch/kgriesser/local/sst-core
+export SST_CORE_ROOT=/scratch/kgriesser/work/sst-core
+export SST_EXT_TESTS_HOME=/scratch/kgriesser/work/sst-ext-tests
 export SST_COMPONENT_BASE=${SST_EXT_TESTS_HOME}/build
 
 export CC=/pkgs/Linux/Ubuntu-24.04/LLVM/LLVM-21.1.4-Linux-X64/bin/clang
