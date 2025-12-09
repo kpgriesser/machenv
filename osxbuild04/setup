@@ -1,0 +1,27 @@
+# Environment
+export SST_CORE_HOME=/Users/dev/kgriesser/local/sst-core
+export SST_CORE_ROOT=/Users/dev/kgriesser/work/sst-core
+export SST_EXT_TESTS_HOME=/Users/dev/kgriesser/work/sst-ext-tests
+export SST_COMPONENT_BASE=${SST_EXT_TESTS_HOME}/build
+
+export CC=/opt/homebrew/Cellar/llvm@20/20.1.8/bin/clang
+export CXX=/opt/homebrew/Cellar/llvm@20/20.1.8/bin/clang++
+
+export PATH="${SST_CORE_HOME}/bin:${PATH}"
+hash -r
+
+# For sst-ext-tests valgrind 
+alias valgrind_ctest='PATH="${SST_EXT_TESTS_HOME}/scripts:${PATH}" ctest --output-on-failure'
+
+# Aliases
+alias ls='ls -F'
+alias h='history'
+
+SST_DISABLE_MPI='--disable-mpi'
+alias sst-configure-core="../configure --prefix=$SST_CORE_HOME $SST_DISABLE_MPI"
+alias sst-configure-core-gdb='CXXFLAGS="-g3 -O0" CFLAGS="-g3 -O0"  ../configure --prefix=$SST_CORE_HOME --enable-debug $SST_DISABLE_MPI'
+alias sst-configure-core-g3='CXXFLAGS="-g3 -O2" CFLAGS="-g3 -O2"  ../configure --prefix=$SST_CORE_HOME $SST_DISABLE_MPI'
+alias sst-configure-core-asan='CXXFLAGS="-g3 -fsanitize=address -fno-omit-frame-pointer" CFLAGS="-g3 -fsanitize=address -fno-omit-frame-pointer"  ../configure --prefix=$SST_CORE_HOME $DISABLE_MPI'
+
+alias sst-make='clear; make -j -s && make install || echo FAILED'
+alias ctest-rerun='ctest --rerun-failed --output-on-failure'
