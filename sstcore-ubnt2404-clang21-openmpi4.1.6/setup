@@ -26,3 +26,6 @@ alias sst-configure-core-asan='CXXFLAGS="-g3 -fsanitize=address -fno-omit-frame-
 
 alias sst-make='clear; make -j -s && make install || echo FAILED'
 alias ctest-rerun='ctest --rerun-failed --output-on-failure'
+
+# not available on mac
+export ASAN_OPTIONS=detect_leaks=0
